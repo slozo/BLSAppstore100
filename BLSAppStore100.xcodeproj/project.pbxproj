@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2759EFB118F58B0100359F6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2759EFB018F58B0100359F6B /* Foundation.framework */; };
+		2759EFB318F58B0100359F6B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2759EFB218F58B0100359F6B /* CoreGraphics.framework */; };
+		2759EFB518F58B0100359F6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2759EFB418F58B0100359F6B /* UIKit.framework */; };
+		2759EFBB18F58B0100359F6B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2759EFB918F58B0100359F6B /* InfoPlist.strings */; };
+		2759EFBD18F58B0100359F6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2759EFBC18F58B0100359F6B /* main.m */; };
+		2759EFC118F58B0100359F6B /* BLSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2759EFC018F58B0100359F6B /* BLSAppDelegate.m */; };
+		2759EFC418F58B0100359F6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2759EFC218F58B0100359F6B /* Main.storyboard */; };
+		2759EFC718F58B0100359F6B /* BLSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2759EFC618F58B0100359F6B /* BLSViewController.m */; };
+		2759EFC918F58B0100359F6B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2759EFC818F58B0100359F6B /* Images.xcassets */; };
+		2759EFD018F58B0100359F6B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2759EFCF18F58B0100359F6B /* XCTest.framework */; };
+		2759EFD118F58B0100359F6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2759EFB018F58B0100359F6B /* Foundation.framework */; };
+		2759EFD218F58B0100359F6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2759EFB418F58B0100359F6B /* UIKit.framework */; };
+		2759EFDA18F58B0100359F6B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2759EFD818F58B0100359F6B /* InfoPlist.strings */; };
+		2759EFDC18F58B0100359F6B /* BLSAppStore100Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2759EFDB18F58B0100359F6B /* BLSAppStore100Tests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2759EFD318F58B0100359F6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2759EFA518F58B0100359F6B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2759EFAC18F58B0100359F6B;
+			remoteInfo = BLSAppStore100;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2759EFAD18F58B0100359F6B /* BLSAppStore100.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLSAppStore100.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2759EFB018F58B0100359F6B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2759EFB218F58B0100359F6B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2759EFB418F58B0100359F6B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2759EFB818F58B0100359F6B /* BLSAppStore100-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BLSAppStore100-Info.plist"; sourceTree = "<group>"; };
+		2759EFBA18F58B0100359F6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2759EFBC18F58B0100359F6B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2759EFBE18F58B0100359F6B /* BLSAppStore100-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BLSAppStore100-Prefix.pch"; sourceTree = "<group>"; };
+		2759EFBF18F58B0100359F6B /* BLSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLSAppDelegate.h; sourceTree = "<group>"; };
+		2759EFC018F58B0100359F6B /* BLSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLSAppDelegate.m; sourceTree = "<group>"; };
+		2759EFC318F58B0100359F6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2759EFC518F58B0100359F6B /* BLSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLSViewController.h; sourceTree = "<group>"; };
+		2759EFC618F58B0100359F6B /* BLSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLSViewController.m; sourceTree = "<group>"; };
+		2759EFC818F58B0100359F6B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2759EFCE18F58B0100359F6B /* BLSAppStore100Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLSAppStore100Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2759EFCF18F58B0100359F6B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2759EFD718F58B0100359F6B /* BLSAppStore100Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BLSAppStore100Tests-Info.plist"; sourceTree = "<group>"; };
+		2759EFD918F58B0100359F6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2759EFDB18F58B0100359F6B /* BLSAppStore100Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLSAppStore100Tests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2759EFAA18F58B0100359F6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2759EFB318F58B0100359F6B /* CoreGraphics.framework in Frameworks */,
+				2759EFB518F58B0100359F6B /* UIKit.framework in Frameworks */,
+				2759EFB118F58B0100359F6B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2759EFCB18F58B0100359F6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2759EFD018F58B0100359F6B /* XCTest.framework in Frameworks */,
+				2759EFD218F58B0100359F6B /* UIKit.framework in Frameworks */,
+				2759EFD118F58B0100359F6B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2759EFA418F58B0100359F6B = {
+			isa = PBXGroup;
+			children = (
+				2759EFB618F58B0100359F6B /* BLSAppStore100 */,
+				2759EFD518F58B0100359F6B /* BLSAppStore100Tests */,
+				2759EFAF18F58B0100359F6B /* Frameworks */,
+				2759EFAE18F58B0100359F6B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2759EFAE18F58B0100359F6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2759EFAD18F58B0100359F6B /* BLSAppStore100.app */,
+				2759EFCE18F58B0100359F6B /* BLSAppStore100Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2759EFAF18F58B0100359F6B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2759EFB018F58B0100359F6B /* Foundation.framework */,
+				2759EFB218F58B0100359F6B /* CoreGraphics.framework */,
+				2759EFB418F58B0100359F6B /* UIKit.framework */,
+				2759EFCF18F58B0100359F6B /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2759EFB618F58B0100359F6B /* BLSAppStore100 */ = {
+			isa = PBXGroup;
+			children = (
+				2759EFBF18F58B0100359F6B /* BLSAppDelegate.h */,
+				2759EFC018F58B0100359F6B /* BLSAppDelegate.m */,
+				2759EFC218F58B0100359F6B /* Main.storyboard */,
+				2759EFC518F58B0100359F6B /* BLSViewController.h */,
+				2759EFC618F58B0100359F6B /* BLSViewController.m */,
+				2759EFC818F58B0100359F6B /* Images.xcassets */,
+				2759EFB718F58B0100359F6B /* Supporting Files */,
+			);
+			path = BLSAppStore100;
+			sourceTree = "<group>";
+		};
+		2759EFB718F58B0100359F6B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2759EFB818F58B0100359F6B /* BLSAppStore100-Info.plist */,
+				2759EFB918F58B0100359F6B /* InfoPlist.strings */,
+				2759EFBC18F58B0100359F6B /* main.m */,
+				2759EFBE18F58B0100359F6B /* BLSAppStore100-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2759EFD518F58B0100359F6B /* BLSAppStore100Tests */ = {
+			isa = PBXGroup;
+			children = (
+				2759EFDB18F58B0100359F6B /* BLSAppStore100Tests.m */,
+				2759EFD618F58B0100359F6B /* Supporting Files */,
+			);
+			path = BLSAppStore100Tests;
+			sourceTree = "<group>";
+		};
+		2759EFD618F58B0100359F6B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2759EFD718F58B0100359F6B /* BLSAppStore100Tests-Info.plist */,
+				2759EFD818F58B0100359F6B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2759EFAC18F58B0100359F6B /* BLSAppStore100 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2759EFDF18F58B0200359F6B /* Build configuration list for PBXNativeTarget "BLSAppStore100" */;
+			buildPhases = (
+				2759EFA918F58B0100359F6B /* Sources */,
+				2759EFAA18F58B0100359F6B /* Frameworks */,
+				2759EFAB18F58B0100359F6B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BLSAppStore100;
+			productName = BLSAppStore100;
+			productReference = 2759EFAD18F58B0100359F6B /* BLSAppStore100.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2759EFCD18F58B0100359F6B /* BLSAppStore100Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2759EFE218F58B0200359F6B /* Build configuration list for PBXNativeTarget "BLSAppStore100Tests" */;
+			buildPhases = (
+				2759EFCA18F58B0100359F6B /* Sources */,
+				2759EFCB18F58B0100359F6B /* Frameworks */,
+				2759EFCC18F58B0100359F6B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2759EFD418F58B0100359F6B /* PBXTargetDependency */,
+			);
+			name = BLSAppStore100Tests;
+			productName = BLSAppStore100Tests;
+			productReference = 2759EFCE18F58B0100359F6B /* BLSAppStore100Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2759EFA518F58B0100359F6B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = BLS;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "MATEUSZ SZLOSEK";
+				TargetAttributes = {
+					2759EFCD18F58B0100359F6B = {
+						TestTargetID = 2759EFAC18F58B0100359F6B;
+					};
+				};
+			};
+			buildConfigurationList = 2759EFA818F58B0100359F6B /* Build configuration list for PBXProject "BLSAppStore100" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2759EFA418F58B0100359F6B;
+			productRefGroup = 2759EFAE18F58B0100359F6B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2759EFAC18F58B0100359F6B /* BLSAppStore100 */,
+				2759EFCD18F58B0100359F6B /* BLSAppStore100Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2759EFAB18F58B0100359F6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2759EFC918F58B0100359F6B /* Images.xcassets in Resources */,
+				2759EFBB18F58B0100359F6B /* InfoPlist.strings in Resources */,
+				2759EFC418F58B0100359F6B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2759EFCC18F58B0100359F6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2759EFDA18F58B0100359F6B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2759EFA918F58B0100359F6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2759EFC718F58B0100359F6B /* BLSViewController.m in Sources */,
+				2759EFC118F58B0100359F6B /* BLSAppDelegate.m in Sources */,
+				2759EFBD18F58B0100359F6B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2759EFCA18F58B0100359F6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2759EFDC18F58B0100359F6B /* BLSAppStore100Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2759EFD418F58B0100359F6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2759EFAC18F58B0100359F6B /* BLSAppStore100 */;
+			targetProxy = 2759EFD318F58B0100359F6B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2759EFB918F58B0100359F6B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2759EFBA18F58B0100359F6B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2759EFC218F58B0100359F6B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2759EFC318F58B0100359F6B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2759EFD818F58B0100359F6B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2759EFD918F58B0100359F6B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2759EFDD18F58B0200359F6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2759EFDE18F58B0200359F6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2759EFE018F58B0200359F6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BLSAppStore100/BLSAppStore100-Prefix.pch";
+				INFOPLIST_FILE = "BLSAppStore100/BLSAppStore100-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2759EFE118F58B0200359F6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BLSAppStore100/BLSAppStore100-Prefix.pch";
+				INFOPLIST_FILE = "BLSAppStore100/BLSAppStore100-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		2759EFE318F58B0200359F6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BLSAppStore100.app/BLSAppStore100";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BLSAppStore100/BLSAppStore100-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BLSAppStore100Tests/BLSAppStore100Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		2759EFE418F58B0200359F6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BLSAppStore100.app/BLSAppStore100";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BLSAppStore100/BLSAppStore100-Prefix.pch";
+				INFOPLIST_FILE = "BLSAppStore100Tests/BLSAppStore100Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2759EFA818F58B0100359F6B /* Build configuration list for PBXProject "BLSAppStore100" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2759EFDD18F58B0200359F6B /* Debug */,
+				2759EFDE18F58B0200359F6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2759EFDF18F58B0200359F6B /* Build configuration list for PBXNativeTarget "BLSAppStore100" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2759EFE018F58B0200359F6B /* Debug */,
+				2759EFE118F58B0200359F6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2759EFE218F58B0200359F6B /* Build configuration list for PBXNativeTarget "BLSAppStore100Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2759EFE318F58B0200359F6B /* Debug */,
+				2759EFE418F58B0200359F6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2759EFA518F58B0100359F6B /* Project object */;
+}
