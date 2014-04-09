@@ -8,6 +8,7 @@
 
 #import "BLSAppDelegate.h"
 #import "BLSTableViewController.h"
+#import <TSMessage.h>
 
 @implementation BLSAppDelegate
 
@@ -15,12 +16,13 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    BLSTableViewController *tableViewController = [[BLSTableViewController alloc]     initWithNibName:@"BLSTableViewController" bundle:nil];
-    UINavigationController *nav = [[UINavigationController alloc]  initWithRootViewController:tableViewController];
-    self.window.rootViewController = nav;
+    BLSTableViewController *tableViewController = [[BLSTableViewController alloc] init];    //initWithNibName:@"BLSTableViewController" bundle:nil];
+    //UINavigationController *nav = [[UINavigationController alloc]  initWithRootViewController:tableViewController];
+    self.window.rootViewController = tableViewController;
     [self.window makeKeyAndVisible];
+    [TSMessage setDefaultViewController: self.window.rootViewController];
     [tableViewController release];
-    [nav release];
+    //[nav release];
     return YES;
 }
 							

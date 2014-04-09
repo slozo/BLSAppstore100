@@ -7,22 +7,118 @@
 //
 
 #import "BLSTableViewController.h"
+#import "BLSTableViewCell.h"
+#import "BLSManager.h"
+
+static NSString *CellIdentifier = @"TableViewCell";
 
 @interface BLSTableViewController ()
+
+@property (nonatomic, retain) UIImageView *backgroundImageView;
+@property (nonatomic, retain) UIImageView *blurredImageView;
+@property (nonatomic, retain) UITableView *tableView;
+@property (nonatomic, retain) UINib *cellNib;
+@property (nonatomic, assign) CGFloat screenHeight;
 
 @end
 
 @implementation BLSTableViewController
 
+-(void)dealloc
+{
+    [_tableView release];
+    [_blurredImageView release];
+    [_backgroundImageView release];
+    [_cellNib release];
+    
+    [super dealloc];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.screenHeight = [UIScreen mainScreen].bounds.size.height;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIImage *background = [UIImage imageNamed:@"bg"];
+    
+    self.backgroundImageView = [[[UIImageView alloc] initWithImage:background] autorelease];
+    self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+    [self.view addSubview:self.backgroundImageView];
+    
+    self.blurredImageView = [[[UIImageView alloc] init] autorelease];
+    self.blurredImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.blurredImageView.alpha = 0;
+    [self.blurredImageView setImageToBlur:background blurRadius:10 completionBlock:nil];
+    [self.view addSubview:self.blurredImageView];
+    
+    self.tableView = [[[UITableView alloc] init] autorelease];
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.separatorColor = [UIColor colorWithWhite:1 alpha:0.2];
+    self.tableView.pagingEnabled = YES;
+    self.cellNib = [UINib nibWithNibName:@"BLSTableViewCell" bundle:nil];
+    [self.tableView registerNib:self.cellNib forCellReuseIdentifier:CellIdentifier];
+    [self.view addSubview:self.tableView];
+    
+    CGRect headerFrame = [UIScreen mainScreen].bounds;
+    CGFloat inset = 20;
+    CGFloat welcomeHeight = 110;
+    CGFloat iconHeight = 30;
+
+    CGRect welcomeFrame = CGRectMake(inset,
+                                         headerFrame.size.height - (welcomeHeight),
+                                         headerFrame.size.width - (2 * inset),
+                                         welcomeHeight);
+    
+    CGRect iconFrame = CGRectMake(inset,
+                                  welcomeFrame.origin.y - iconHeight,
+                                  iconHeight,
+                                  iconHeight);
+    
+    UIView *header = [[UIView alloc] initWithFrame:headerFrame];
+    header.backgroundColor = [UIColor clearColor];
+    self.tableView.tableHeaderView = header;
+    [header release];
+    
+    UILabel *welcomeLabel = [[UILabel alloc] initWithFrame:welcomeFrame];
+    welcomeLabel.backgroundColor = [UIColor clearColor];
+    welcomeLabel.textColor = [UIColor whiteColor];
+    welcomeLabel.text = @"BLStream";
+    welcomeLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:60];
+    [header addSubview:welcomeLabel];
+    [welcomeLabel release];
+
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, 30)];
+    headerLabel.backgroundColor = [UIColor clearColor];
+    headerLabel.textColor = [UIColor whiteColor];
+    headerLabel.text = @"Loading...";
+    headerLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18];
+    headerLabel.textAlignment = NSTextAlignmentCenter;
+    [header addSubview:headerLabel];
+    [headerLabel release];
+    
+    UIImageView *iconView = [[UIImageView alloc] initWithFrame:iconFrame];
+    iconView.contentMode = UIViewContentModeScaleAspectFit;
+    iconView.backgroundColor = [UIColor clearColor];
+    [header addSubview:iconView];
+    [iconView release];
+    
+    [BLSManager sharedManager];
+}
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    CGRect bounds = self.view.bounds;
+    
+    self.backgroundImageView.frame = bounds;
+    self.blurredImageView.frame = bounds;
+    self.tableView.frame = self.view.bounds;
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,27 +133,35 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 100;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    
+    BLSTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (!cell) {
+        NSArray *arr = [[NSBundle mainBundle] loadNibNamed:@"BLSTableViewCell" owner:nil options:nil];
+        cell = [arr objectAtIndex:0];
+        cell.name.text = [NSString stringWithFormat:@"Appstore position: %d",indexPath.row];
+    }
     
     return cell;
 }
-*/
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+       return 44;
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

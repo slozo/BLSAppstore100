@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <LBBlurredImage/UIImageView+LBBlurredImage.h>
 
-@interface BLSTableViewController : UITableViewController
+@interface BLSTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 
 @end
