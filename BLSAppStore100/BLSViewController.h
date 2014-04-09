@@ -1,5 +1,5 @@
 //
-//  BLSTableViewController.h
+//  BLSViewController.h
 //  BLSAppStore100
 //
 //  Created by MATEUSZ SZLOSEK on 09.04.2014.
@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <LBBlurredImage/UIImageView+LBBlurredImage.h>
 
-@interface BLSTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
+@interface BLSViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 
 @end

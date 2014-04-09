@@ -41,7 +41,7 @@
 
 -(BOOL)fetchJSON
 {
-    NSLog(@"Fetching JSON.");
+    __block typeof(self) bself = self;
     
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:[NSURL URLWithString:@"https://itunes.apple.com/us/rss/toppaidapplications/limit=100/json"] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
     {
@@ -58,7 +58,8 @@
                   [TSMessage showNotificationWithTitle:@"Data Received." subtitle:@"" type:TSMessageNotificationTypeSuccess];
                 });
                 
-                self.manager.dataStorage.dataArray = json[@"feed"][@"entry"];
+                NSLog(@"fetched!");
+                bself.manager.dataStorage.dataArray = json[@"feed"][@"entry"];
                 
                 [[NSNotificationCenter defaultCenter] postNotificationName:BLSNotificationDataReceived object:nil];
             
