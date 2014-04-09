@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5E167A4E85F14DC687DAB543"
-               BuildableName = "libPods-Mantle.a"
-               BlueprintName = "Pods-Mantle"
+               BlueprintIdentifier = "89E0D5F4E88F49B4906F147D"
+               BuildableName = "libPods-LBBlurredImage.a"
+               BlueprintName = "Pods-LBBlurredImage"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

@@ -4,7 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-HexColors.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-LBBlurredImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Mantle.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-TSMessages.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>6FC895B3FDB0481F94AF299C</key>
+		<key>5E167A4E85F14DC687DAB543</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C466F6E1277D440192366687</key>
+		<key>89E0D5F4E88F49B4906F147D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8F147BC8B4AE4618BB8E4F67</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>913B41A186184A9E955FB14E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CF33DEC1B1534C7F95229254</key>
 		<dict>
 			<key>primary</key>
 			<true/>
