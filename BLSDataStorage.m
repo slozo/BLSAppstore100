@@ -20,10 +20,9 @@
     [super dealloc];
 }
 
-+ (NSDictionary *)JSONKeyPathsByPropertyKey {
-    return @{
-             @"dataArray": @"entry",
-             };
+-(NSString *)description
+{
+    return [NSString stringWithFormat:@"DataArray: %@",[self.dataArray description]];
 }
 
 

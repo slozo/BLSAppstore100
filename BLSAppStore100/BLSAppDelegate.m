@@ -20,7 +20,7 @@
     //UINavigationController *nav = [[UINavigationController alloc]  initWithRootViewController:tableViewController];
     self.window.rootViewController = tableViewController;
     [self.window makeKeyAndVisible];
-    [TSMessage setDefaultViewController: self.window.rootViewController];
+    //[TSMessage setDefaultViewController: self.window.rootViewController];
     [tableViewController release];
     //[nav release];
     return YES;

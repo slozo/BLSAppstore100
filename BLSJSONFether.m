@@ -9,6 +9,7 @@
 #import "BLSJSONFether.h"
 #import <TSMessage.h>
 #import "BLSDataStorage.h"
+#import "BLSManager.h"
 
 @interface BLSJSONFether()
 
@@ -44,27 +45,30 @@
     
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:[NSURL URLWithString:@"https://itunes.apple.com/us/rss/toppaidapplications/limit=100/json"] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
     {
-        NSLog(@"task completed.");
         
         if (! error) {
             
-            NSLog(@"No error");
             NSError *jsonError = nil;
-            id json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
             
-            NSLog(@"response: %@", json);
+            id json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+
             if (! jsonError) {
-               [TSMessage showNotificationWithTitle:@"Data Received." subtitle:@"" type:TSMessageNotificationTypeSuccess];
-               
                 
-               self.dataStorage = [MTLJSONAdapter modelOfClass:[BLSDataStorage class] fromJSONDictionary:json error:nil];
+                dispatch_async(dispatch_get_main_queue(), ^ {
+                  [TSMessage showNotificationWithTitle:@"Data Received." subtitle:@"" type:TSMessageNotificationTypeSuccess];
+                });
                 
+                self.manager.dataStorage.dataArray = json[@"feed"][@"entry"];
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:BLSNotificationDataReceived object:nil];
+            
             }
         }
         else {
             NSLog(@"error");
-            
-           [TSMessage showNotificationWithTitle:@"Can't fetch data." subtitle:@"" type:TSMessageNotificationTypeError];
+            dispatch_async(dispatch_get_main_queue(), ^ {
+                [TSMessage showNotificationWithTitle:@"Can't fetch data." subtitle:@"" type:TSMessageNotificationTypeError];
+            });
         }
     }];
     

@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		274CBA7818F5D05800B75A51 /* icon-appstore-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 274CBA7718F5D05800B75A51 /* icon-appstore-small.png */; };
 		2759EFB118F58B0100359F6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2759EFB018F58B0100359F6B /* Foundation.framework */; };
 		2759EFB318F58B0100359F6B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2759EFB218F58B0100359F6B /* CoreGraphics.framework */; };
 		2759EFB518F58B0100359F6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2759EFB418F58B0100359F6B /* UIKit.framework */; };
 		2759EFBB18F58B0100359F6B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2759EFB918F58B0100359F6B /* InfoPlist.strings */; };
 		2759EFBD18F58B0100359F6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2759EFBC18F58B0100359F6B /* main.m */; };
 		2759EFC118F58B0100359F6B /* BLSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2759EFC018F58B0100359F6B /* BLSAppDelegate.m */; };
-		2759EFC718F58B0100359F6B /* BLSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2759EFC618F58B0100359F6B /* BLSViewController.m */; };
 		2759EFC918F58B0100359F6B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2759EFC818F58B0100359F6B /* Images.xcassets */; };
 		2759EFD018F58B0100359F6B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2759EFCF18F58B0100359F6B /* XCTest.framework */; };
 		2759EFD118F58B0100359F6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2759EFB018F58B0100359F6B /* Foundation.framework */; };
@@ -24,8 +24,6 @@
 		2759EFF318F58FA100359F6B /* BLSTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2759EFF118F58FA100359F6B /* BLSTableViewController.xib */; };
 		2759EFF618F5978000359F6B /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2759EFF418F5978000359F6B /* bg.png */; };
 		2759EFF718F5978000359F6B /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2759EFF518F5978000359F6B /* bg@2x.png */; };
-		2759EFFB18F59A1700359F6B /* BLSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2759EFF918F59A1700359F6B /* BLSTableViewCell.m */; };
-		2759EFFC18F59A1700359F6B /* BLSTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2759EFFA18F59A1700359F6B /* BLSTableViewCell.xib */; };
 		2759EFFF18F5AA8C00359F6B /* BLSJSONFether.m in Sources */ = {isa = PBXBuildFile; fileRef = 2759EFFE18F5AA8C00359F6B /* BLSJSONFether.m */; };
 		2759F00218F5AF6300359F6B /* BLSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2759F00118F5AF6300359F6B /* BLSManager.m */; };
 		2759F00518F5B00700359F6B /* BLSDataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2759F00418F5B00700359F6B /* BLSDataStorage.m */; };
@@ -45,6 +43,7 @@
 /* Begin PBXFileReference section */
 		019792475C1B46B595B178F9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		092548A8D4A046E79E106F77 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		274CBA7718F5D05800B75A51 /* icon-appstore-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-appstore-small.png"; sourceTree = "<group>"; };
 		2759EFAD18F58B0100359F6B /* BLSAppStore100.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLSAppStore100.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2759EFB018F58B0100359F6B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2759EFB218F58B0100359F6B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,8 +54,6 @@
 		2759EFBE18F58B0100359F6B /* BLSAppStore100-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BLSAppStore100-Prefix.pch"; sourceTree = "<group>"; };
 		2759EFBF18F58B0100359F6B /* BLSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLSAppDelegate.h; sourceTree = "<group>"; };
 		2759EFC018F58B0100359F6B /* BLSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLSAppDelegate.m; sourceTree = "<group>"; };
-		2759EFC518F58B0100359F6B /* BLSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLSViewController.h; sourceTree = "<group>"; };
-		2759EFC618F58B0100359F6B /* BLSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLSViewController.m; sourceTree = "<group>"; };
 		2759EFC818F58B0100359F6B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2759EFCE18F58B0100359F6B /* BLSAppStore100Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLSAppStore100Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2759EFCF18F58B0100359F6B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -68,9 +65,6 @@
 		2759EFF118F58FA100359F6B /* BLSTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BLSTableViewController.xib; path = BLSAppStore100/BLSTableViewController.xib; sourceTree = "<group>"; };
 		2759EFF418F5978000359F6B /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		2759EFF518F5978000359F6B /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
-		2759EFF818F59A1700359F6B /* BLSTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLSTableViewCell.h; sourceTree = "<group>"; };
-		2759EFF918F59A1700359F6B /* BLSTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLSTableViewCell.m; sourceTree = "<group>"; };
-		2759EFFA18F59A1700359F6B /* BLSTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLSTableViewCell.xib; sourceTree = "<group>"; };
 		2759EFFD18F5AA8C00359F6B /* BLSJSONFether.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLSJSONFether.h; sourceTree = "<group>"; };
 		2759EFFE18F5AA8C00359F6B /* BLSJSONFether.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLSJSONFether.m; sourceTree = "<group>"; };
 		2759F00018F5AF6300359F6B /* BLSManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLSManager.h; sourceTree = "<group>"; };
@@ -143,8 +137,6 @@
 			children = (
 				2759EFBF18F58B0100359F6B /* BLSAppDelegate.h */,
 				2759EFC018F58B0100359F6B /* BLSAppDelegate.m */,
-				2759EFC518F58B0100359F6B /* BLSViewController.h */,
-				2759EFC618F58B0100359F6B /* BLSViewController.m */,
 				2759EFC818F58B0100359F6B /* Images.xcassets */,
 				2759EFB718F58B0100359F6B /* Supporting Files */,
 			);
@@ -154,6 +146,7 @@
 		2759EFB718F58B0100359F6B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				274CBA7718F5D05800B75A51 /* icon-appstore-small.png */,
 				2759EFF418F5978000359F6B /* bg.png */,
 				2759EFF518F5978000359F6B /* bg@2x.png */,
 				2759EFB818F58B0100359F6B /* BLSAppStore100-Info.plist */,
@@ -193,9 +186,6 @@
 				2759F00418F5B00700359F6B /* BLSDataStorage.m */,
 				2759F00018F5AF6300359F6B /* BLSManager.h */,
 				2759F00118F5AF6300359F6B /* BLSManager.m */,
-				2759EFF818F59A1700359F6B /* BLSTableViewCell.h */,
-				2759EFF918F59A1700359F6B /* BLSTableViewCell.m */,
-				2759EFFA18F59A1700359F6B /* BLSTableViewCell.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -291,8 +281,8 @@
 				2759EFF318F58FA100359F6B /* BLSTableViewController.xib in Resources */,
 				2759EFF618F5978000359F6B /* bg.png in Resources */,
 				2759EFBB18F58B0100359F6B /* InfoPlist.strings in Resources */,
+				274CBA7818F5D05800B75A51 /* icon-appstore-small.png in Resources */,
 				2759EFF718F5978000359F6B /* bg@2x.png in Resources */,
-				2759EFFC18F59A1700359F6B /* BLSTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,10 +335,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2759F00218F5AF6300359F6B /* BLSManager.m in Sources */,
-				2759EFC718F58B0100359F6B /* BLSViewController.m in Sources */,
 				2759EFFF18F5AA8C00359F6B /* BLSJSONFether.m in Sources */,
 				2759F00518F5B00700359F6B /* BLSDataStorage.m in Sources */,
-				2759EFFB18F59A1700359F6B /* BLSTableViewCell.m in Sources */,
 				2759EFC118F58B0100359F6B /* BLSAppDelegate.m in Sources */,
 				2759EFBD18F58B0100359F6B /* main.m in Sources */,
 				2759EFF218F58FA100359F6B /* BLSTableViewController.m in Sources */,

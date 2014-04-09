@@ -32,6 +32,8 @@
     if (self = [super init]) {
         
         _jsonFetcher = [[BLSJSONFether alloc] init];
+        _jsonFetcher.manager = self;
+        _dataStorage = [[BLSDataStorage alloc] init];
         
        BOOL success = [self fetchData];
         if (!success)
@@ -44,7 +46,11 @@
 
 -(BOOL)fetchData
 {
+    dispatch_queue_t backgroundQueue = dispatch_queue_create("com.mateuszszlosek.queue", 0);
+    
+    dispatch_async(backgroundQueue, ^{
     [self.jsonFetcher fetchJSON];
+    });
     
     return YES;
 }

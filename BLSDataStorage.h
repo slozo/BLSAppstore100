@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Mantle.h>
 
-@interface BLSDataStorage : MTLModel <MTLJSONSerializing>
+@interface BLSDataStorage : NSObject
 
 @property (nonatomic, retain) NSArray *dataArray;
 

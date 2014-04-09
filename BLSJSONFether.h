@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <Mantle.h>
 
-//@class BLSDataStorage;
+@class BLSManager;
 
 @interface BLSJSONFether : NSObject
+
+@property (nonatomic, assign) BLSManager *manager;
 
 -(BOOL)fetchJSON;
 

@@ -7,8 +7,8 @@
 //
 
 #import "BLSTableViewController.h"
-#import "BLSTableViewCell.h"
 #import "BLSManager.h"
+#import <TSMessage.h>
 
 static NSString *CellIdentifier = @"TableViewCell";
 
@@ -19,6 +19,7 @@ static NSString *CellIdentifier = @"TableViewCell";
 @property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, retain) UINib *cellNib;
 @property (nonatomic, assign) CGFloat screenHeight;
+@property (nonatomic, retain) UILabel *headerLabel;
 
 @end
 
@@ -30,19 +31,48 @@ static NSString *CellIdentifier = @"TableViewCell";
     [_blurredImageView release];
     [_backgroundImageView release];
     [_cellNib release];
+    [_headerLabel release];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:BLSNotificationDataReceived object:nil];
+    
     
     [super dealloc];
+}
+
+-(instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataFetched) name:BLSNotificationDataReceived object:nil];
+    }
+    return self;
+}
+
+-(void)dataFetched
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.headerLabel.text = @"Welcome";
+        
+        [self.tableView reloadData];
+    });
+    
+    //NSLog(@"Fetched: %@",[BLSManager sharedManager].dataStorage);
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
 
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     self.screenHeight = [UIScreen mainScreen].bounds.size.height;
+    
+    [TSMessage setDefaultViewController:self];
     
     UIImage *background = [UIImage imageNamed:@"bg"];
     
@@ -61,14 +91,14 @@ static NSString *CellIdentifier = @"TableViewCell";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorColor = [UIColor colorWithWhite:1 alpha:0.2];
-    self.tableView.pagingEnabled = YES;
+    self.tableView.pagingEnabled = NO;
     self.cellNib = [UINib nibWithNibName:@"BLSTableViewCell" bundle:nil];
     [self.tableView registerNib:self.cellNib forCellReuseIdentifier:CellIdentifier];
     [self.view addSubview:self.tableView];
     
     CGRect headerFrame = [UIScreen mainScreen].bounds;
     CGFloat inset = 20;
-    CGFloat welcomeHeight = 110;
+    CGFloat welcomeHeight = 310;
     CGFloat iconHeight = 30;
 
     CGRect welcomeFrame = CGRectMake(inset,
@@ -94,14 +124,14 @@ static NSString *CellIdentifier = @"TableViewCell";
     [header addSubview:welcomeLabel];
     [welcomeLabel release];
 
-    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, 30)];
-    headerLabel.backgroundColor = [UIColor clearColor];
-    headerLabel.textColor = [UIColor whiteColor];
-    headerLabel.text = @"Loading...";
-    headerLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18];
-    headerLabel.textAlignment = NSTextAlignmentCenter;
-    [header addSubview:headerLabel];
-    [headerLabel release];
+    self.headerLabel = [[[UILabel alloc] initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, 30)] autorelease];
+    self.headerLabel.backgroundColor = [UIColor clearColor];
+    self.headerLabel.textColor = [UIColor whiteColor];
+    self.headerLabel.text = @"Loading...";
+    self.headerLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18];
+    self.headerLabel.textAlignment = NSTextAlignmentCenter;
+    [header addSubview:self.headerLabel];
+    
     
     UIImageView *iconView = [[UIImageView alloc] initWithFrame:iconFrame];
     iconView.contentMode = UIViewContentModeScaleAspectFit;
@@ -124,97 +154,87 @@ static NSString *CellIdentifier = @"TableViewCell";
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 100;
+    if (section == 0)
+    {
+        return 0;
+    }
+
+    return [[BLSManager sharedManager].dataStorage.dataArray count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+
+    static NSString *CellIdentifier = @"CellIdentifier";
+    __block UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    
-    BLSTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (!cell) {
-        NSArray *arr = [[NSBundle mainBundle] loadNibNamed:@"BLSTableViewCell" owner:nil options:nil];
-        cell = [arr objectAtIndex:0];
-        cell.name.text = [NSString stringWithFormat:@"Appstore position: %d",indexPath.row];
+    if (! cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
+    
+
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.detailTextLabel.textColor = [UIColor whiteColor];
+    
+    cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:13];
+    cell.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:13];
+    cell.textLabel.text = [BLSManager sharedManager].dataStorage.dataArray[indexPath.row][@"im:name"][@"label"];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", indexPath.row + 1];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
+    
+        if (cell.imageView.image)
+        {
+            return ;
+        }
+        
+        NSData *data0 = [NSData dataWithContentsOfURL:[NSURL URLWithString:[BLSManager sharedManager].dataStorage.dataArray[indexPath.row][@"im:image"][0][@"label"]]];
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+         
+            cell.imageView.image = [UIImage imageWithData:data0];
+            
+            [self.tableView reloadData];
+     });
+    });
     
     return cell;
 }
 
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.section == 0)
+    {
+        return self.screenHeight;
+    }
        return 44;
 }
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+#pragma mark - UIScrollViewDelegate
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+    CGFloat height = scrollView.bounds.size.height;
+    CGFloat position = MAX(scrollView.contentOffset.y, 0.0);
 
-/*
-#pragma mark - Table view delegate
+    CGFloat percent = MIN(position / height, 1.0);
 
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-    
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    self.blurredImageView.alpha = percent;
 }
-*/
 
 @end
