@@ -7,12 +7,20 @@
 //
 
 #import "BLSAppDelegate.h"
+#import "BLSTableViewController.h"
 
 @implementation BLSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    BLSTableViewController *tableViewController = [[BLSTableViewController alloc]     initWithNibName:@"BLSTableViewController" bundle:nil];
+    UINavigationController *nav = [[UINavigationController alloc]  initWithRootViewController:tableViewController];
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
+    [tableViewController release];
+    [nav release];
     return YES;
 }
 							

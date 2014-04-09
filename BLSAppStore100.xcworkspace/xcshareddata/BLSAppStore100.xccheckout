@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>45229D42-B2F7-47E6-85CD-75BFADDF55AE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BLSAppStore100</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F6CFF564-2E7D-4DBD-9BFA-F3851FAB0D92</key>
+		<string>https://github.com/slozo/BLSAppstore100.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BLSAppStore100.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F6CFF564-2E7D-4DBD-9BFA-F3851FAB0D92</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/slozo/BLSAppstore100.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F6CFF564-2E7D-4DBD-9BFA-F3851FAB0D92</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F6CFF564-2E7D-4DBD-9BFA-F3851FAB0D92</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BLSAppStore100</string>
+		</dict>
+	</array>
+</dict>
+</plist>
